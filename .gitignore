@@ -164,3 +164,4 @@ cython_debug/
 # appended Local settings
 log
 previous_scripts
+venv
