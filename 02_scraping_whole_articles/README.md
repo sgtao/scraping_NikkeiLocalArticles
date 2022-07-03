@@ -17,5 +17,7 @@ pip3 install -r requirements.txt
 ## start scraping
 - execute script
 ```shell
+# cd 02_scraping_whole_articles # for need
+source venv/bin/activate
 sh -x 00_get_nikkei_local_articles.sh
 ```
