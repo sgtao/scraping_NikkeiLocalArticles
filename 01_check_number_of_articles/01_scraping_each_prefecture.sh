@@ -52,4 +52,22 @@ sh 11_get_prefecture_articles.sh  oita $num_articles | tee log/44_oita.txt
 sh 11_get_prefecture_articles.sh  miyazaki $num_articles | tee log/45_miyazaki.txt
 sh 11_get_prefecture_articles.sh  kagoshima $num_articles | tee log/46_kagoshima.txt
 sh 11_get_prefecture_articles.sh  okinawa $num_articles | tee log/47_okinawa.txt
+# 
+# スクレイピング用のバッチファイル作成
+BATCH_FILE="outputs/01_scraping_each_pref.sh"
+if [ ! -d outputs ] ; then
+  mkdir outputs
+fi
+echo "" > $BATCH_FILE;
+base_msg="sh 11_get_prefecture_articles.sh "
+for file in log/*_*.txt ; do 
+  pref_name=` basename $file | sed -e "s/.._//" -e "s/.txt//" `
+  logfile=$file
+  num_articles=` grep "件" $file | awk '{ print $1 }'  `
+  echo "$base_msg $pref_name $num_articles | tee $logfile"
+done | tee $BATCH_FILE;
+echo "##################";
+echo "Copy $BATCH_FILE to next step folder"
+#
+# 
 # EOF
