@@ -166,5 +166,7 @@ log
 previous_scripts
 venv
 outputs
+assets
+log.merged
 #
 # EOF
