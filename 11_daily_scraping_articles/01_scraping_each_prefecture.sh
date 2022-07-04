@@ -1,11 +1,12 @@
 #!/bin/sh
-# num_articles=20
-num_articles=40
+num_articles=20
+# num_articles=40
 if [ ! -d log ] ; then
   mkdir log
 fi
 # scraping articles
-sh 11_get_prefecture_articles.sh  hokkaido $num_articles | tee log/01_hokkaido.txt
+# sh 11_get_prefecture_articles.sh  hokkaido $num_articles | tee log/01_hokkaido.txt
+sh 11_get_prefecture_articles.sh  hokkaido 40 | tee log/01_hokkaido.txt
 sh 11_get_prefecture_articles.sh  aomori $num_articles | tee log/02_aomori.txt
 sh 11_get_prefecture_articles.sh  iwate $num_articles | tee log/03_iwate.txt
 sh 11_get_prefecture_articles.sh  miyagi $num_articles | tee log/04_miyagi.txt
@@ -17,7 +18,8 @@ sh 11_get_prefecture_articles.sh  tochigi $num_articles | tee log/09_tochigi.txt
 sh 11_get_prefecture_articles.sh  gunma $num_articles | tee log/10_gunma.txt
 sh 11_get_prefecture_articles.sh  saitama $num_articles | tee log/11_saitama.txt
 sh 11_get_prefecture_articles.sh  chiba $num_articles | tee log/12_chiba.txt
-sh 11_get_prefecture_articles.sh  tokyo $num_articles | tee log/13_tokyo.txt
+# sh 11_get_prefecture_articles.sh  tokyo $num_articles | tee log/13_tokyo.txt
+sh 11_get_prefecture_articles.sh  tokyo 40 | tee log/13_tokyo.txt
 sh 11_get_prefecture_articles.sh  kanagawa $num_articles | tee log/14_kanagawa.txt
 sh 11_get_prefecture_articles.sh  niigata $num_articles | tee log/15_niigata.txt
 sh 11_get_prefecture_articles.sh  toyama $num_articles | tee log/16_toyama.txt
