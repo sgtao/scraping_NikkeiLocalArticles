@@ -168,5 +168,6 @@ venv
 outputs
 assets
 log.merged
+script
 #
 # EOF

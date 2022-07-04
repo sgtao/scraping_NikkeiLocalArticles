@@ -35,6 +35,6 @@ for logfile in log/*.txt ; do
 done
 #
 # copy to assets
-echo " => output to $LOG_FILE "
+# echo " => output to $LOG_FILE "
 /bin/cp  $MERGE_DIR/* $ASSET_DIR/.
 

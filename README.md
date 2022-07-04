@@ -1,7 +1,9 @@
-# 20220702_scraping_NikkeiLocal
-- Nikkei記事を一覧で参照するためスクレイピングをしてみる
+# scraping_NikkeiLocalArticles
+- Nikkei地域面の記事を参照するためスクレイピングをしてみる
 
 ## 手順
+
+### 準備
 - １. ４７都道府県の地域記事から公開記事数を取得（`01_check_number_of_articles`）
 ```shell
 cd 01_check_number_of_articles
@@ -31,3 +33,12 @@ done
 cd 11_daily_scraping_articles
 sh -x 00_get_nikkei_local_articles.sh
 ```
+
+### 毎日の記事収集
+```shell
+sh 11_daily_scraping_articles/00_get_nikkei_local_articles.sh;
+# cat 11_daily_scraping_articles/articles/recent_articles.csv # for check recents
+```
+
+## LICENSE
+MIT LICENSE.
